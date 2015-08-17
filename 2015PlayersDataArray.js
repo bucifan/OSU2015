@@ -1,4 +1,4 @@
-var 2015PlayerData = ["00/97/21/972166,58,alabi joshua,/sports/m-footbl/mtt/joshua_alabi_972166,Alabi#~# Joshua,DL,77,,295,1,FR,Detroit#~# Mich. (Cass Tech)",
+var PlayerData = ["00/97/21/972166,58,alabi joshua,/sports/m-footbl/mtt/joshua_alabi_972166,Alabi#~# Joshua,DL,77,,295,1,FR,Detroit#~# Mich. (Cass Tech)",
 "00/,97/21/972144,88,alexander a.j.,/sports/m-footbl/mtt/aj_alexander_972144,Alexander#~# A.J.,TE,74,6-2,235,1,FR,Burke#~# Va. (Lake Braddock)",
 "00/,83/80/838099,13,apple eli,/sports/m-footbl/mtt/eli_apple_838099,Apple#~# Eli,CB,73,6-1,200,3,SO,Voorhees#~# N.J. (Eastern)",
 "00/,97/21/972167,3,arnette damon,/sports/m-footbl/mtt/damon_arnette_972167,Arnette#~# Damon,DB,72,6-0,191,1,FR,Fort Lauderdale#~# Fla. (St. Thomas Aquinas)",
