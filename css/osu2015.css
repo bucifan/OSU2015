@@ -22,4 +22,9 @@ body, html {
 	padding-bottom: 5px;
 	font-weight: bold; 
 	font-family:  Tahoma, Geneva, sans-serif;
+	border: 1px gray solid;
+}
+.playerlookup{
+	width: 100%;
+	text-align: center;
 }

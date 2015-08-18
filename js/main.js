@@ -8,14 +8,30 @@ var mappedPlayers = players.map(function(p){
 			var pname = p.name;
 			if(pname.toLowerCase().indexOf(lname[0])>-1){
 				p["url"] = pdtl[4]; 
-				//p["mp"] = pdtl[3];
+				p["label"] =  pnum + " - " + pname;
+				p["value"] = pnum + " - " + pname;
 			}
 	    }
 	}  
 	return p;
 });
 
-$(".panel-body").after("<div>Players:" + players.length+ "<br/>"+ playerData.length +"</div>");
-mappedPlayers.map(function(mp){
-	$(".panel-body").after("<div> - player:" + mp.name+ " | "+ mp.url +"</div>");
-});
+setTimeout(addLookup,2500);
+function addLookup(){
+  $(".panel-body").html("<div class='playerlookup'> " + mappedPlayers.length+ " players loaded </div>");
+  $(".playerlookup").append("<div> <label>Player Lookup: <input id='playerLU'/></div>");
+  $("#playerLU").autocomplete({
+	  minLength: 0,
+	  source: mappedPlayers,
+	  focus: function(e,ui){
+		  $("#playerLU").val(ui.item.label);
+	  },
+	  select: function(e,ui){
+		  alert(ui.item.name);
+	  }
+  })
+}
+
+//mappedPlayers.map(function(mp){
+	//$(".panel-body").after("<div> - player:" + mp.name+ " | "+ mp.url +"</div>");
+//});
