@@ -3,15 +3,46 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>Ohio State Buckeyes</title>
-		<link href="css/jquery-ui-1.10.3.custom.css" rel="stylesheet"> 
+		<script src="http://heartcode-canvasloader.googlecode.com/files/heartcode-canvasloader-min-0.9.1.js"></script>
+		<link href="css/jquery-ui-1.10.3.custom.min.css" rel="stylesheet"> 
+		<link href="css/osu2015.css" rel="stylesheet"> 
+		<style type="text/css">
+		
+	</style>
 	</head>
 	<body>
 		<div id="pagecontainer">
-			
+			<div class="panel panel-primary" style='margin:10px 10px 10px 10px;'>
+  				<div class="panel-heading" style='text-align:center;'>2015 Buckeye Roster</div>
+  				<div class="panel-body" style='min-height:75%'>
+					  <div id="canvasloader-container" class="wrapper"></div>
+					  <div id="loadertext" class="wrapper-text">loading player information</div>
+				  </div>
+			</div>				  
 		</div>
-		<script src="jquery-1.10.1.min.js" />
-		<script src="2015PlayersArray.js" />
-		<script src="2015PlayersDataArray.js" />
-		<script src="main.js" />
+	
+		<!-- This script creates a new CanvasLoader instance and places it in the wrapper div -->
+		<script type="text/javascript">
+			var cl = new CanvasLoader('canvasloader-container');
+			cl.setColor('#878087'); // default is '#000000'
+			cl.setShape('roundRect'); // default is 'oval'
+			cl.setDiameter(55); // default is 40
+			cl.setDensity(17); // default is 40
+			cl.setRange(1); // default is 1.3
+			cl.setSpeed(1); // default is 2
+			cl.setFPS(16); // default is 24
+			cl.show(); // Hidden by default
+			
+			// This bit is only for positioning - not necessary
+			  var loaderObj = document.getElementById("canvasLoader");
+	  		loaderObj.style.position = "absolute";
+	  		loaderObj.style["top"] = cl.getDiameter() * -0.5 + "px";
+	  		loaderObj.style["left"] = cl.getDiameter() * -0.5 + "px";
+	    </script>
+		<script src="js/jquery-1.10.1.min.js"></script>
+		<script src="js/jquery-ui-1.10.3.custom.min.js" ></script>
+		<script src="js/2015PlayersArray.js" ></script>
+		<script src="js/2015PlayersDataArray.js"></script>
+		<script src="js/main.js" ></script>
 	</body>
 </html>
