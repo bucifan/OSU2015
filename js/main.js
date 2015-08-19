@@ -36,8 +36,15 @@ function addLookup(){
 
 function getPlayerData(po){
 	//$("#playerLU").val("");
-	$(".playerlookup").append("<div id='playerDetail'> <label>"+po.name+"</label><br/>"+po.url+"</div>");
-	$("#hidplayerData").load("http://www.ohiostatebuckeyes.com"+po.url+".html #Content", function(){alert("load done");} )
+	var lurl=po.url.substring(po.url.lastIndexOf("/"));
+	
+	$("#hidplayerData").load("players"+lurl+".html #Content", function(){
+		//alert("load done");
+		
+		$(".playerlookup").append("<div id='playerDetail'> <label>"+po.name+"</label><br/></div>");
+		$("#player-photo").appendTo("#playerDetail");
+	});
+	
 }
 //mappedPlayers.map(function(mp){
 	//$(".panel-body").after("<div> - player:" + mp.name+ " | "+ mp.url +"</div>");
