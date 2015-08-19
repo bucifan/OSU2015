@@ -42,7 +42,20 @@ function getPlayerData(po){
 		//alert("load done");
 		
 		$(".playerlookup").append("<div id='playerDetail'> <label>"+po.name+"</label><br/></div>");
-		$("#player-photo").appendTo("#playerDetail");
+		//$("#player-photo").appendTo("#playerDetail");
+		$(".bio-body img").remove();
+		$(".bio-body font").removeAttr('color');
+		$(".bio-body font").removeAttr('face');
+		var dtlsHTML = "<div class='playerDtls'>";
+		$(".bio-body table table td").each(function(){
+			dtlsHTML+=$(this).html();
+		});
+		dtlsHTML+="</div>";
+		//$(".bio-body table").removeAttr('bgcolor');
+		//$(".bio-body table").removeAttr('width');
+		//$(".bio-body table").addClass('playerDtls');
+		$("#playerDetail").append(dtlsHTML);
+		
 	});
 	
 }

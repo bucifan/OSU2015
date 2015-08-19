@@ -42,3 +42,7 @@ body, html {
 #hidplayerData{
 	 display: none;
 }
+.playerDtls{
+	width: 50%;
+	color: maroon;
+}
