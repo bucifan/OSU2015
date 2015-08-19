@@ -19,19 +19,26 @@ var mappedPlayers = players.map(function(p){
 setTimeout(addLookup,2500);
 function addLookup(){
   $(".panel-body").html("<div class='playerlookup'> " + mappedPlayers.length+ " players loaded </div>");
-  $(".playerlookup").append("<div> <label>Player Lookup: <input id='playerLU'/></div>");
+  $(".playerlookup").append("<div> <label>Player Lookup:</label><br/><input id='playerLU'/></div>");
   $("#playerLU").autocomplete({
 	  minLength: 0,
 	  source: mappedPlayers,
-	  focus: function(e,ui){
-		  $("#playerLU").val(ui.item.label);
-	  },
+	  //focus: function(e,ui){
+	//	  $("#playerLU").val(ui.item.pname);
+	  //},
 	  select: function(e,ui){
-		  alert(ui.item.name);
+		  getPlayerData(ui.item);
+		  $("#playerLU").val("");
+		  return false;
 	  }
   })
 }
 
+function getPlayerData(po){
+	//$("#playerLU").val("");
+	$(".playerlookup").append("<div id='playerDetail'> <label>"+po.name+"</label><br/>"+po.url+"</div>");
+	$("#hidplayerData").load("http://www.ohiostatebuckeyes.com"+po.url+".html #Content", function(){alert("load done");} )
+}
 //mappedPlayers.map(function(mp){
 	//$(".panel-body").after("<div> - player:" + mp.name+ " | "+ mp.url +"</div>");
 //});

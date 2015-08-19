@@ -25,6 +25,20 @@ body, html {
 	border: 1px gray solid;
 }
 .playerlookup{
-	width: 100%;
+	/*width: 100%;*/
 	text-align: center;
+	margin: 15px 20px;
+	border: 1px #67707e solid;
+	padding: 20px;
+	
+}
+.playerlookup label{
+	font-weight: bold;
+	color: gray;
+}
+.playerlookup div{
+	margin: 15px; 
+}
+#hidplayerData{
+	 display: none;
 }
